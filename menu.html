@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restoran Menü</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+
+</head>
+<body>
+    <div id="customer-view" class="view">
+        <header>
+            <h1>Restoran Menü</h1>
+            <div id="table-info">
+                <span>Masa No: </span>
+                <span id="table-number">-</span>
+            </div>
+        </header>
+
+        <nav class="menu-tabs">
+            <button class="tab-btn active" data-category="soups">Çorbalar</button>
+            <button class="tab-btn" data-category="mains">Ana Yemekler</button>
+            <button class="tab-btn" data-category="drinks">İçecekler</button>
+            <button class="tab-btn" data-category="desserts">Tatlılar</button>
+        </nav>
+
+        <div class="menu-content">
+            <div id="soups" class="menu-section active"></div>
+            <div id="mains" class="menu-section"></div>
+            <div id="drinks" class="menu-section"></div>
+            <div id="desserts" class="menu-section"></div>
+        </div>
+
+        <div class="order-summary">
+            <h3>Sipariş Özeti</h3>
+            <div id="order-items"></div>
+            <div class="total">
+                <span>Toplam:</span>
+                <span id="total-amount">0.00 TL</span>
+            </div>
+            <button id="submit-order">Siparişi Onayla</button>
+        </div>
+    </div>
+
+    <script src="menu.js"></script>
+    <script src="customer.js"></script>
+</body>
+</html>
